@@ -85,13 +85,3 @@ A comprehensive Android application built in Kotlin using XML layouts and Materi
 
 ---
 
-## 💡 Viva Concepts & Quick Answers
-
-- **What is AndroidX Media3 ExoPlayer?**
-  - ExoPlayer is Google's extensible, application-level media player for Android. It supersedes the legacy `MediaPlayer` API, supporting adaptive streaming (HLS/DASH) and rich player state listeners.
-- **Why must we release media players?**
-  - Media codecs and audio/video hardware buffers are limited system resources. Releasing them in `onStop()` / `onDestroyView()` prevents memory leaks, audio focus conflicts, and background battery drain.
-- **How does Pinch-to-Zoom work?**
-  - `ScaleGestureDetector` calculates multi-finger distance ratios (`scaleFactor`), which update a 3x3 transformation `Matrix` applied to a custom `ImageView` (`ScaleType.MATRIX`). Boundary checks prevent dragging the image out of viewport bounds.
-- **What is a Sticky Broadcast?**
-  - A sticky broadcast (e.g., `ACTION_BATTERY_CHANGED`) retains its intent data in the system cache, allowing apps to query the last broadcast value immediately upon registration without waiting for a new event.
